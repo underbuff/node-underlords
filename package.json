@@ -1,0 +1,35 @@
+{
+  "name": "dota-underlords",
+  "version": "1.0.3",
+  "description": "Exposes a simple API for interacting with the Underlords game coordinator",
+  "main": "index.js",
+  "keywords": [
+    "underlords",
+    "underlord",
+    "chess",
+    "valve",
+    "steam"
+  ],
+  "scripts": {
+    "generate-protos": "node scripts/generate-protos.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kolosok86/underlords.git"
+  },
+  "author": "kolosok86",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kolosok86/underlords/issues"
+  },
+  "dependencies": {
+    "bytebuffer": "^5.0.1",
+    "long": "^3.2.0",
+    "protobufjs": "^6.8.8",
+    "steamid": "^1.1.0"
+  },
+  "devDependencies": {
+    "steam-user": "^4.2.0"
+  },
+  "homepage": "https://github.com/Kolosok86/underlords#readme"
+}

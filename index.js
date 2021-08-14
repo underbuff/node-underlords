@@ -188,6 +188,16 @@ Underlords.prototype.requestMatches = function(steamid, rows = 20, callback){
 	}
 }
 
+Underlords.prototype.requestMatch = function(match_id, callback){
+	this._send(Language.GetPostMatchStats, Protos.CMsgClientToGCGetPostMatchStats, {
+		match_id
+	});
+
+	if(callback){
+		this.once('match', callback);
+	}
+}
+
 Underlords.prototype._handlers = {};
 
 require('./enums.js');

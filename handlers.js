@@ -52,6 +52,12 @@ handlers[Language.GetMatchHistoryResponse] = function(body){
 	this.emit('matchList', proto);
 }
 
+// Match Information
+handlers[Language.GetProfileResponse] = function(body){
+	let proto = decodeProto(Protos.CMsgClientToGCGetProfileResponse, body);
+	this.emit('playersProfile', proto);
+};
+
 function decodeProto(proto, encoded) {
 	if (ByteBuffer.isByteBuffer(encoded)) {
 		encoded = encoded.toBuffer();

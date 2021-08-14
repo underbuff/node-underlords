@@ -61,7 +61,13 @@ var underlords = new Underlords(steamClient);
 
 ### requestMatches(steamid[, callback])
 - `steamid` - The numeric SteamID of the Steam account to pull profile data for.
-- `rows` - The number of matches.
+- `rows` - The amount numbers of matches.
+- `callback` - Called if all parameters are valid when Steam responds to us.
+
+Note: This method ONlY works for your account
+
+### requestMatch(match_id[, callback])
+- `match_id` - You can get the match number from the `requestMatches` method.
 - `callback` - Called if all parameters are valid when Steam responds to us.
 
 # Events

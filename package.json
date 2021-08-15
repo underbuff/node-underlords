@@ -1,6 +1,6 @@
 {
   "name": "dota-underlords",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Exposes a simple API for interacting with the Underlords game coordinator",
   "main": "index.js",
   "keywords": [

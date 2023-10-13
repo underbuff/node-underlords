@@ -1,5 +1,5 @@
 const SteamUser = require('steam-user');
-const Underlords = require('./');
+const Underlords = require('../index');
 const acc = require('./account.json')
 
 let client = new SteamUser();

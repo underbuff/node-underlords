@@ -1,6 +1,6 @@
 {
-  "name": "dota-underlords",
-  "version": "1.0.4",
+  "name": "@underbuff/node-underlords",
+  "version": "1.0.6",
   "description": "Exposes a simple API for interacting with the Underlords game coordinator",
   "main": "index.js",
   "keywords": [
@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kolosok86/underlords.git"
+    "url": "git+https@github.com:underbuff/node-underlords.git"
   },
-  "author": "kolosok86",
-  "license": "ISC",
+  "author": "doroxz",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Kolosok86/underlords/issues"
+    "url": "https://github.com/underbuff/node-underlords/issues"
   },
   "dependencies": {
     "bytebuffer": "^5.0.1",
@@ -31,5 +31,5 @@
   "devDependencies": {
     "steam-user": "^4.2.0"
   },
-  "homepage": "https://github.com/Kolosok86/underlords#readme"
+  "homepage": "https://github.com/underbuff/node-underlords#readme"
 }

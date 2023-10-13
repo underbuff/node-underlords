@@ -1,6 +1,4 @@
 const ByteBuffer = require('bytebuffer');
-const Long = require('long');
-const SteamID = require('steamid');
 
 const Underlords = require('./index.js');
 const Language = require('./language.js');

@@ -12,16 +12,16 @@ This is based off of [node-tf2](https://github.com/DoctorMcKay/node-tf2).
 
 First, install it from npm:
 
-	$ npm install dota-underlords
+	$ npm install @underbuff/node-underlords
 
 Require the module and call its constructor with your SteamUser instance:
 
 ```js
 const SteamUser = require('steam-user');
-const Underlords = require('dota-underlords');
+const Underlords = require('@underbuff/node-underlords');
 
-let user = new SteamUser();
-let underlords = new Underlords(user);
+let client = new SteamUser();
+let underlords = new Underlords(client);
 ```
 
 To initialize your GC connection, just launch Underlords via SteamUser normally:
@@ -84,7 +84,7 @@ Emitted when we're disconnected from the GC for any reason. underlords will auto
 Example usage:
 
 ```js
-const Underlords = require('dota-underlords');
+const Underlords = require('@underbuff/node-underlords');
 let underlordsClient = new Underlords(steamUser);
 
 underlordsClient.on('disconnectedFromGC', (reason) => {

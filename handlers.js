@@ -53,9 +53,21 @@ handlers[Language.GetMatchHistoryResponse] = function(body){
 }
 
 // Match Information
-handlers[Language.GetProfileResponse] = function(body){
-	let proto = decodeProto(Protos.CMsgClientToGCGetProfileResponse, body);
-	this.emit('playersProfile', proto);
+handlers[Language.GetPostMatchStatsResponse] = function(body){
+	let proto = decodeProto(Protos.CMsgClientToGCGetPostMatchStatsResponse, body);
+	this.emit('match', proto);
+};
+
+// Friends rank
+handlers[Language.GetFriendRanksResponse] = function(body){
+	let proto = decodeProto(Protos.CMsgClientToGCGetFriendRanksResponse, body);
+	this.emit('friendRanks', proto);
+};
+
+// Spectate User
+handlers[Language.SpectateUserResponse] = function(body){
+	let proto = decodeProto(Protos.CMsgClientToGCSpectateUserResponse, body);
+	this.emit('spectateUser', proto);
 };
 
 function decodeProto(proto, encoded) {

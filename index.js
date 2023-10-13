@@ -150,7 +150,7 @@ Underlords.prototype._send = function(type, protobuf, body) {
 	return true;
 };
 
-Underlords.prototype.requestProfile = function(steamid, callback) {
+Underlords.prototype.requestProfile = function({ steamid }, callback) {
 	if (typeof steamid == 'string') {
 		steamid = new SteamID(steamid);
 	}
@@ -163,12 +163,16 @@ Underlords.prototype.requestProfile = function(steamid, callback) {
 		account_id: steamid.accountid
 	});
 
-	if(callback){
+	if(callback) {
 		this.once('playersProfile', callback);
 	}
 };
 
-Underlords.prototype.requestMatches = function(steamid, rows = 20, callback){
+Underlords.prototype.requestMatches = function({
+	steamid,
+	rows = 20,
+	match_id_cursor = 0,
+}, callback){
 	if (typeof steamid == 'string') {
 		steamid = new SteamID(steamid);
 	}
@@ -180,21 +184,40 @@ Underlords.prototype.requestMatches = function(steamid, rows = 20, callback){
 	this._send(Language.GetMatchHistory, Protos.CMsgClientToGCGetMatchHistory, {
 		account_id: steamid.accountid,
 		request_rows: rows,
-		match_id_cursor: 0
+		match_id_cursor
 	});
 
-	if(callback){
+	if(callback) {
 		this.once('matchList', callback);
 	}
 }
 
-Underlords.prototype.requestMatch = function(match_id, callback){
+Underlords.prototype.requestMatch = function({ match_id }, callback){
 	this._send(Language.GetPostMatchStats, Protos.CMsgClientToGCGetPostMatchStats, {
 		match_id
 	});
 
-	if(callback){
+	if(callback) {
 		this.once('match', callback);
+	}
+}
+
+Underlords.prototype.getFriendRanks = function(callback){
+	this._send(Language.GetFriendRanks, Protos.CMsgClientToGCGetFriendRanks, {});
+
+	if(callback) {
+		this.once('friendRanks', callback);
+	}
+}
+
+Underlords.prototype.spectateUser = function({ account_id, region_mode = 0 }, callback){
+	this._send(Language.SpectateUser, Protos.CMsgClientToGCSpectateUser, {
+		spectate_account_id: account_id,
+		region_mode
+	});
+
+	if(callback) {
+		this.once('spectateUser', callback);
 	}
 }
 

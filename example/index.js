@@ -1,5 +1,5 @@
 const SteamUser = require('steam-user');
-const Underlords = require('../index');
+const Underlords = require('../build').Underlords
 const acc = require('./account.json')
 
 let client = new SteamUser();
@@ -26,13 +26,13 @@ underlordsClient.on('connectedToGC', (...args) => {
         rows: 2
     }, console.log);
 
-    underlordsClient.requestProfile({ steamid: steamIdMain }, console.log)
+    //underlordsClient.requestProfile({ steamid: steamIdMain }, console.log)
 
-    underlordsClient.requestMatch({ match_id: 129273950 }, res => {
+    /*underlordsClient.requestMatch({ match_id: 129784686 }, res => {
         console.log(res)
-    })
-    underlordsClient.getFriendRanks(console.log)
-    underlordsClient.spectateUser({ account_id: 1258005875 }, console.log)
+    })*/
+    //underlordsClient.getFriendRanks(console.log)
+    //underlordsClient.spectateUser({ account_id: 1258005875, }, console.log)
 });
 
 underlordsClient.on('debug', console.log)

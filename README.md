@@ -4,10 +4,6 @@ This module provides a very flexible interface for interacting with the [Underlo
 Game Coordinator. It's designed to work with a
 [node-steam-user SteamUser](https://github.com/DoctorMcKay/node-steam-user) instance.
 
-This is based off of [node-tf2](https://github.com/DoctorMcKay/node-tf2).
-
-**You will need node-steam-user v4.2.0 or later and Node.js v8 or later.**
-
 # Setup
 
 First, install it from npm:
